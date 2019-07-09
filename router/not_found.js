@@ -5,7 +5,7 @@ const router = express.Router();
 
 
 router.use((req, res)=>{
-    res.render('not_fond', {
+    res.render('not_found', {
         
     });
 });
