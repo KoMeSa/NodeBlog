@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html class="no-js"> 
+ <html class="no-js"> 
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +40,9 @@
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
 
 	</head>
 	<body>
@@ -55,11 +58,11 @@
 						</div>
 						<div class="col-md-6">
 							<ul class="nav text-center">
-								<li><a href="http://localhost:3000/"><span>Work</span></a></li>
+								<li class="active"><a href="http://localhost:3000/"><span>Blog</span></a></li>
 								<li><a href="http://localhost:3000/about">About</a></li>
-								<li class="active"><a href="http://localhost:3000/services">Services</a></li>
+								<li><a href="http://localhost:3000/services">Services</a></li>
 								<li><a href="http://localhost:3000/contact">Contact</a></li>
-								<li><a href="http://localhost:3000/add">Add</a></li>
+					
 							</ul>
 						</div>
 						<div class="col-md-3">
@@ -79,7 +82,6 @@
 				<div class="row">
 					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
 						<div class="intro animate-box">
-							<h1>Services</h1>
 							<h2>We are web agency based in London &amp; we love functional &amp; meaningful design.</h2>
 						</div>
 					</div>
@@ -87,76 +89,57 @@
 			<div>
 		</section>
 
-		<section id="services">
+		<section>
 			<div class="container">
-				<div class="row">
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-command"></i>
-							</div>
-							<h2>Brand Identity</h2>	
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
+					<div class="col-lg-6 col-lg-offset-3 col-md-8 col-md-offset-2 text-center">
+							<h2>Our Blog</h2>	
 					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-drop2"></i>
-							</div>
-							<h2>Web Design &amp; UI</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-anchor"></i>
-							</div>
-							<h2>Development &amp; CMS</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-command"></i>
-							</div>
-							<h2>Brand Identity</h2>	
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-drop2"></i>
-							</div>
-							<h2>Web Design &amp; UI</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-					<div class="col-md-4 animate-box">
-						<div class="service">
-							<div class="service-icon">
-								<i class="icon-anchor"></i>
-							</div>
-							<h2>Development &amp; CMS</h2>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-						</div>
-					</div>
-				</div>
+						
 			</div>
+		<div class="container">
+			<div class="row">
+             {{#each post}}
+              <div class="col-lg-4 col-md-6 text-center">
+                      <div class="card h-100">
+                       <div>
+
+                        <div class="blog-image"><img src="{{preview}}" alt="Blog Image"></div>
+
+                        <a class="avatar" href="#"><img src="{{authorAvatar}}" alt="Profile Image"></a>
+
+                        <div class="blog-info">
+
+                         <h4 class="title"><a href="single-post/{{_id}}"><b>{{title}}</b></a></h4>
+
+                         <ul class="post-footer">
+                          <li><a href="#"><i class="ion-heart"></i>57</a></li>
+                          <li><a href="#"><i class="ion-chatbubble"></i>{{commentAmt}}</a></li>
+                          <li><a href="#"><i class="ion-eye"></i>138</a></li>
+                         </ul>
+
+                        </div><!-- blog-info -->
+                       </div><!-- single-post -->
+                      </div><!-- card -->
+                     </div><!-- col-lg-4 col-md-6 -->
+             {{else}}
+              <h1>no post was found</h1>
+             {{/each}}
+
+			</div><!-- row -->
+
+		</div><!-- container -->
+
+
+		
+		
 		</section>
 
 		
 
-	
-
 		<footer id="footer" role="contentinfo">
 			<div class="container">
 				<div class="row">
-					<div class="col-md-12 text-center">
+					<div class="col-md-12 text-center ">
 						<div class="footer-widget border">
 							<p class="pull-left"><small>&copy; Closest Free HTML5. All Rights Reserved.</small></p>
 							<p class="pull-right"><small> Designed by  <a href="http://freehtml5.co/" ta>freehtml5.co</a>  Images: <a href="https://unsplash.com/">Unsplash</a></small></p>
