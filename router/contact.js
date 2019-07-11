@@ -4,7 +4,10 @@ const router = express.Router();
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const url = bodyParser.urlencoded({extended: false});
+
+//model
 const User = require('../models/users.js');
+const Post = require('../models/users.js');
 
 
 
@@ -29,7 +32,8 @@ router.get('/contact', (req, res)=>{
     });
 });
 
-router.post('/contact', url, (req, res)=>{
+
+router.post('/contact', url, (req, res, next)=>{
     let name = req.body.name;
     let password = req.body.password;
     console.log(`name: ${name}, password: ${password}`);
@@ -42,10 +46,19 @@ router.post('/contact', url, (req, res)=>{
  user.save()
     .then((user)=>{
         res.render('contact', { 
-            answer: 'You are registered'
-        });
- })
-})
+            answer: 'You are registered',
+            clickMe: 'Click on me to go and leave a commentary' 
+        })
+    })
+    .catch((error)=>{
+        console.log(error)
+    });
+});
+
+
+
+
+
 
 
 

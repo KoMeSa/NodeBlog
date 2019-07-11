@@ -30,6 +30,7 @@ const about = require('./router/about.js');
 const services = require('./router/services.js');
 const contact = require('./router/contact.js');
 const notFound = require('./router/not_found.js');
+const addPost = require('./router/add.js');
 
 
 
@@ -52,7 +53,9 @@ app.use(home);
 app.use(about);
 app.use(services);
 app.use(contact);
+app.use(addPost);
 app.use(notFound);
+
 
 
 

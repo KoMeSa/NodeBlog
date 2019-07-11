@@ -3,7 +3,7 @@ const Schema = mongoose.Schema;
 
 
 const postSchema = new Schema({
-    title:{
+    autor:{
         type: String,
         required: true
     },
