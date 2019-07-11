@@ -29,8 +29,10 @@ router.post('/add', url, (req, res, next)=>{
     // console.log(addPost);
 
     addPost.save()
-        .then(addPost, ()=>{
+        .then((addPost)=>{
             // console.log('Post is add');
+            // req.flash('success', 'Comment Added');
+            // res.location('/');
             res.redirect('/');
         })
         .catch( (error) => console.log(error));
